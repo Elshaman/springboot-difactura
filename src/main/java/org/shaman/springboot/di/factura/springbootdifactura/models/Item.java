@@ -13,6 +13,10 @@ public class Item {
     public Item() {
     }
 
+    public int getImporte(){
+        return this.Quantity * this.product.getPrice();
+    }
+
 
 
     public Product getProduct() {
