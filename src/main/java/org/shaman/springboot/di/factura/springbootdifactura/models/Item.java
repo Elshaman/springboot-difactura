@@ -4,7 +4,17 @@ public class Item {
 
     private Product product;
     private Integer Quantity;
-    
+
+
+    public Item(Product product, Integer quantity) {
+        this.product = product;
+        Quantity = quantity;
+    }
+    public Item() {
+    }
+
+
+
     public Product getProduct() {
         return product;
     }
