@@ -1,11 +1,14 @@
 package org.shaman.springboot.di.factura.springbootdifactura.models;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Customer {
 
+    @Value("${customer.firstname}")
     private String firstname;
+    @Value("${customer.lastname}")
     private String lastname;
 
 
