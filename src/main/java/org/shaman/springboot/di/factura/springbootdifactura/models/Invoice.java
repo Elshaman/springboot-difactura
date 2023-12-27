@@ -6,11 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
+//la anotacion JsonIGnoreProperties aplica al RequestScope
+//porque el requestScope crea una copia o proxy del objeto de contexto singleton
+//con mas atributos residuales que deben ser ignorados
+
 @Component
+@RequestScope
+@JsonIgnoreProperties({"targetSource", "advisors"})
 public class Invoice {
 
     @Autowired
